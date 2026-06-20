@@ -34,7 +34,9 @@ flowchart TD
 - **LLM:** Ollama (Modelo local quantizado `hf.co/unsloth/gemma-4-12b-it-GGUF:UD-Q4_K_XL`)
     
 - **Base de Dados:** Ficheiros JSON e CSV locais (Pandas)
-    
+
+
+```
 
 ## 📁 Estrutura do Projeto
 
