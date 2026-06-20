@@ -67,7 +67,6 @@ flowchart TD
 | Interface | [Streamlit](https://streamlit.io/) |
 | LLM | Ollama (local)|
 | Base de Conhecimento | JSON/CSV mockados na pasta `data` |
-| Validação | [ex: Checagem de alucinações] |
 
 ---
 
@@ -78,9 +77,16 @@ flowchart TD
 - [ ] [ex: Agente só responde com base nos dados fornecidos]
 - [ ] [ex: Respostas incluem fonte da informação]
 - [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ] [Foca apenas en educar, não em aconselhar]
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- NÃO faz recomendações de investimento direto: Nunca sugere a compra/venda de ações, criptomoedas ou fundos específicos.
+
+- NÃO executa transferências (Apenas Leitura): Por motivos de segurança,o agente apenas lê os dados (extratos/saldos) e não tem permissão   para movimentar dinheiro.
+
+- NÃO pede nem armazena passwords: Está programado para recusar qualquer interação onde o cliente tente enviar códigos PIN ou CVV do cartão.
+
+- Não substitui um profissional certificado
+
