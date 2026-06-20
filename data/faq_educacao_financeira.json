@@ -1,0 +1,29 @@
+{
+  "conceitos_basicos": [
+    {
+      "termo": "Reserva de Emergência",
+      "explicacao": "É um valor financeiro guardado exclusivamente para lidar com imprevistos. A recomendação geral é que este fundo consiga cobrir entre 3 a 6 meses do custo de vida mensal.",
+      "exemplo_pratico": "Se o carro avariar subitamente durante uma viagem ou precisares de substituir o telemóvel de trabalho inesperadamente, usas este dinheiro para resolver o problema na hora, sem teres de recorrer a cartões de crédito ou empréstimos com juros altos."
+    },
+    {
+      "termo": "Juros Compostos",
+      "explicacao": "São os famosos 'juros sobre juros'. Podem ser os teus piores inimigos nas dívidas ou os teus melhores amigos nos investimentos, fazendo o valor crescer de forma exponencial.",
+      "exemplo_pratico": "Se tiveres uma dívida de 100€ no cartão de crédito com juros de 10% ao mês, no mês seguinte deves 110€. No outro, os 10% de juros vão ser calculados sobre os 110€ (e não sobre os 100€ iniciais). A dívida vira uma bola de neve. Nos investimentos, a lógica é igual, mas a teu favor!"
+    },
+    {
+      "termo": "Custos Fixos vs. Custos Variáveis",
+      "explicacao": "Os custos fixos são despesas essenciais que ocorrem todos os meses com um valor previsível. Os custos variáveis oscilam de acordo com o consumo ou com o nível de atividade num determinado mês.",
+      "exemplo_pratico": "A renda da casa ou a propina da faculdade são custos fixos. Por outro lado, o combustível que gastas a fazer entregas ou os almoços fora são custos variáveis, porque dependem de quantas horas trabalhas ou das tuas escolhas nesse mês."
+    },
+    {
+      "termo": "Regra do Orçamento 50/30/20",
+      "explicacao": "É um método simples para dividir o rendimento mensal e evitar o descontrolo. Consiste em alocar 50% do dinheiro para necessidades básicas, 30% para desejos pessoais e lazer, e 20% para poupança e investimentos.",
+      "exemplo_pratico": "Se ganhares 1000€ num mês, destinas 500€ para a renda, contas e supermercado; 300€ para jantares fora, cinema ou subscrições como o Spotify; e pegas em 200€ para colocar imediatamente na tua reserva ou num Certificado de Aforro."
+    },
+    {
+      "termo": "Fundo de Maneio (ou Capital de Giro)",
+      "explicacao": "É o dinheiro que tens de ter disponível de forma rápida na conta corrente para manteres as tuas atividades a funcionar enquanto não recebes o pagamento pelos teus serviços.",
+      "exemplo_pratico": "Se uma plataforma só te paga os serviços prestados de duas em duas semanas, precisas de ter um fundo de maneio na conta para conseguir pagar o gasóleo, a manutenção e a alimentação durante esses 14 dias sem ficares a zeros."
+    }
+  ]
+}
