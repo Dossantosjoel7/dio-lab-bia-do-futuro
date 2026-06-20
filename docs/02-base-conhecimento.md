@@ -44,7 +44,15 @@ Os dados são carregados diretamente para a memória no arranque da aplicação 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+A injeção de dados ocorre de forma **dinâmica (sob demanda)**, de forma a poupar a janela de contexto do modelo local (Ollama) e evitar alucinações causadas por excesso de informação.
+
+1. O _System Prompt_ base contém única e exclusivamente as regras de Persona e os limites de segurança da DenaFin.
+    
+2. O `historico_atendimento.csv` é lido no início para contextualizar as interações mais recentes da memória.
+    
+3. Se a intenção do utilizador for matemática/analítica, uma função em Python soma as categorias do `transacoes.csv` e injeta apenas os totais resultantes no prompt.
+    
+4. Se a intenção for educativa, o código pesquisa o termo exato nos ficheiros JSON e anexa esse bloco de texto específico ao final do prompt para embasar a resposta.
 
 ---
 
@@ -53,13 +61,23 @@ Os dados são carregados diretamente para a memória no arranque da aplicação 
 > Mostre um exemplo de como os dados são formatados para o agente.
 
 ```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+INSTRUÇÃO DO SISTEMA:
+És a DenaFin. Responde à pergunta do utilizador de forma educativa, utilizando APENAS o contexto fornecido abaixo. NÃO recomendes investimentos. Usa sempre exemplos práticos.
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+CONTEXTO INJETADO (DADOS DO CLIENTE - MÊS DE REFERÊNCIA: JUNHO 2026):
+- Total de Rendimentos: 1270.00€
+- Total de Gastos em Educação: 119.00€ (Propinas ISEC, Módulo Formação TVDE)
+- Total de Gastos em Lazer: 17.99€
+
+CONTEXTO INJETADO (MEMÓRIA DO HISTÓRICO):
+- 19/06/2026: Cliente perguntou sobre a Reserva de Emergência. Estado: Não resolvido.
+
+CONTEXTO INJETADO (BASE DE CONHECIMENTO):
+- Termo: Reserva de Emergência
+- Explicação: Fundo financeiro guardado para imprevistos (3 a 6 meses do custo de vida).
+- Exemplo Prático: Dinheiro usado se o carro avariar subitamente durante o trabalho.
+
+PERGUNTA DO UTILIZADOR:
+"DenaFin, este mês gastei imenso com a faculdade e as formações de condução. Sobre aquela conversa que tivemos ontem, quanto é que achas que devo ter de lado se o meu carro der problemas?"
+
 ```
