@@ -1,42 +1,42 @@
 [
   {
-    "nome": "Tesouro Selic",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "100% da Selic",
-    "aporte_minimo": 30.00,
-    "indicado_para": "Reserva de emergência e iniciantes"
+    "nome": "Certificados de Aforro",
+    "categoria": "Renda Fixa / Dívida Pública",
+    "risco": "Muito Baixo",
+    "rentabilidade": "Taxa base atrelada à Euribor + Prémio de permanência",
+    "aporte_minimo": "100€",
+    "indicado_para": "Criação de reserva de emergência e poupanças de curto a médio prazo, pois o capital é garantido pelo Estado."
   },
   {
-    "nome": "CDB Liquidez Diária",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "102% do CDI",
-    "aporte_minimo": 100.00,
-    "indicado_para": "Quem busca segurança com rendimento diário"
+    "nome": "Depósito a Prazo",
+    "categoria": "Poupança Bancária",
+    "risco": "Muito Baixo",
+    "rentabilidade": "Taxa fixa anual (TANB) definida pelo banco no momento da subscrição",
+    "aporte_minimo": "Varia (normalmente a partir de 250€)",
+    "indicado_para": "Guardar dinheiro que tem um objetivo a curto prazo (ex: pagar uma propina ou fazer uma viagem) e que não pode sofrer desvalorização."
   },
   {
-    "nome": "LCI/LCA",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "95% do CDI",
-    "aporte_minimo": 1000.00,
-    "indicado_para": "Quem pode esperar 90 dias (isento de IR)"
+    "nome": "PPR (Plano Poupança Reforma)",
+    "categoria": "Investimento a Longo Prazo",
+    "risco": "Baixo a Médio (depende se é na modalidade de Fundo ou Seguro)",
+    "rentabilidade": "Variável ou garantida, mas oferece benefícios fiscais no IRS",
+    "aporte_minimo": "A partir de 25€ (entregas mensais)",
+    "indicado_para": "Preparação para a reforma ou para pagar futuras prestações de um crédito habitação, aproveitando os benefícios fiscais."
   },
   {
-    "nome": "Fundo Multimercado",
-    "categoria": "fundo",
-    "risco": "medio",
-    "rentabilidade": "CDI + 2%",
-    "aporte_minimo": 500.00,
-    "indicado_para": "Perfil moderado que busca diversificação"
+    "nome": "ETF (Exchange Traded Fund)",
+    "categoria": "Renda Variável",
+    "risco": "Médio a Alto",
+    "rentabilidade": "Variável (acompanha o rendimento de um índice global, como as 500 maiores empresas dos EUA)",
+    "aporte_minimo": "A partir de 1€ a 50€ (dependendo da corretora)",
+    "indicado_para": "Construção de património a longo prazo (mais de 5 a 10 anos) para quem suporta as variações normais do mercado."
   },
   {
-    "nome": "Fundo de Ações",
-    "categoria": "fundo",
-    "risco": "alto",
-    "rentabilidade": "Variável",
-    "aporte_minimo": 100.00,
-    "indicado_para": "Perfil arrojado com foco no longo prazo"
+    "nome": "Ações Individuais",
+    "categoria": "Renda Variável",
+    "risco": "Alto",
+    "rentabilidade": "Variável (depende dos lucros da empresa e do pagamento de dividendos)",
+    "aporte_minimo": "O preço de uma ação",
+    "indicado_para": "Investidores com conhecimento avançado que querem ser sócios de empresas específicas e aceitam o risco de perda de capital."
   }
 ]
