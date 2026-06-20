@@ -1,149 +1,121 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+```
+# 👩‍🏫 DenaFin - Educadora Financeira Inteligente
 
-## Contexto
+> Agente de IA Generativa desenhado para ensinar conceitos de finanças pessoais a jovens adultos, estudantes e trabalhadores independentes de forma simples, usando os próprios dados do cliente como exemplos práticos.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+## 💡 O Que é a DenaFin?
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+A DenaFin é uma assistente virtual que atua como uma "Professora Particular". Ela **ensina**, não recomenda. Ela explica conceitos como reserva de emergência, gestão de rendimentos variáveis e tipos de investimentos usando uma abordagem didática, empática e com exemplos concretos baseados no extrato do cliente.
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+**O que a DenaFin faz:**
+- ✅ Explica conceitos financeiros de forma simples e sem jargões
+- ✅ Usa dados reais do utilizador (ex: rendimentos de estafeta, propinas) como exemplos práticos
+- ✅ Lê o histórico de atendimento para retomar conversas pendentes
+- ✅ Analisa padrões de gastos para promover a literacia financeira
 
----
+**O que a DenaFin NÃO faz:**
+- ❌ Não recomenda investimentos específicos (ex: "Compra esta ação")
+- ❌ Não tem, nem pede, acesso a passwords, PINs ou cartões bancários
+- ❌ Não envia dados para a cloud (funciona de forma 100% local)
 
-## O Que Você Deve Entregar
+## 🏗️ Arquitetura
 
-### 1. Documentação do Agente
+```mermaid
+flowchart TD
+    A[Utilizador] --> B[Streamlit]
+    B --> C[Ollama - LLM Local (Gemma 12B)]
+    C --> D[Base de Conhecimento (RAG)]
+    D --> C
+    C --> E[Resposta Educativa e Segura]
+````
 
-Defina **o que** seu agente faz e **como** ele funciona:
+**Stack Tecnológica:**
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+- **Interface:** Streamlit (Python)
+    
+- **LLM:** Ollama (Modelo local quantizado `hf.co/unsloth/gemma-4-12b-it-GGUF:UD-Q4_K_XL`)
+    
+- **Base de Dados:** Ficheiros JSON e CSV locais (Pandas)
+    
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+## 📁 Estrutura do Projeto
 
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
 
 ```
-📁 lab-agente-financeiro/
+├── data/                          # Base de conhecimento e mock data
+│   ├── faq_educacao_financeira.json # Teoria e exemplos práticos
+│   ├── transacoes.csv             # Histórico de gastos e rendimentos
+│   ├── historico_atendimento.csv  # Memória de interações anteriores
+│   └── produtos_financeiros.json  # Catálogo didático de produtos (ex: PPR, ETFs)
 │
-├── 📄 README.md
+├── docs/                          # Documentação completa do sistema
+│   ├── 01-documentacao-agente.md  # Caso de uso e persona
+│   ├── 02-base-conhecimento.md    # Estratégia de RAG
+│   ├── 03-prompts.md              # System prompt e Few-Shot exemplos
+│   ├── 04-metricas.md             # Avaliação de qualidade e Guardrails
+│   └── 05-pitch.md                # Guião de apresentação do projeto
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+└── src/
+    └── app.py                     # Motor principal e interface Streamlit
 ```
 
----
+## 🚀 Como Executar
 
-## Dicas Finais
+### 1. Preparar o Servidor de IA (Ollama)
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+Certifica-te que tens o [Ollama](https://www.google.com/search?q=https://ollama.com) instalado no teu sistema operativo (seja Linux/Zorin OS ou Windows). Abre o terminal e executa:
+
+
+```
+ollama pull hf.co/unsloth/gemma-4-12b-it-GGUF:UD-Q4_K_XL
+ollama serve
+```
+
+### 2. Instalar as Dependências do Python
+
+No teu ambiente virtual (`.venv`), instala as bibliotecas necessárias:
+
+
+```
+pip install streamlit pandas requests
+```
+
+### 3. Rodar a DenaFin
+
+Garante que estás na diretoria raiz do teu projeto e executa:
+
+
+```
+streamlit run src/app.py
+```
+
+## 🎯 Exemplos de Uso
+
+**Pergunta:** "DenaFin, o que são Certificados de Aforro?"
+
+**DenaFin:** "Um Certificado de Aforro é um produto de Renda Fixa (Dívida Pública) com risco muito baixo, pois o capital é garantido pelo Estado. O aporte mínimo é de apenas 100€! É excelente para construíres a tua reserva de emergência e guardares o dinheiro que ganhaste nas tuas entregas de forma segura."
+
+**Pergunta:** "Onde é que eu gastei mais dinheiro em Junho?"
+
+**DenaFin:** "A analisar as tuas transações... O teu maior investimento este mês foi em Educação (119,00€), com as propinas do ISEC e o módulo de Formação TVDE. Logo a seguir vem a Alimentação (113,10€). Investir no teu futuro é a melhor escolha! Queres ver algumas estratégias para otimizar os teus custos variáveis de transporte?"
+
+## 📊 Métricas de Avaliação
+
+|**Métrica**|**Objetivo**|
+|---|---|
+|**Assertividade (RAG)**|O agente extrai as somas e conceitos corretos dos ficheiros CSV/JSON locais?|
+|**Segurança (Guardrails)**|Evita inventar regras e recusa terminantemente dar conselhos financeiros diretos?|
+|**Coerência (Persona)**|A linguagem é empática, pedagógica e adequada a um jovem adulto/estudante?|
+
+## 🎬 Diferenciais do Projeto
+
+- **Privacidade Absoluta (100% Local):** Arquitetura desenhada para correr estritamente offline usando o Ollama. Nenhum dado financeiro do utilizador é enviado para APIs de terceiros.
+    
+- **Contexto de Rendimentos Variáveis:** Lógica de negócio focada num público moderno (trabalhadores independentes/gig economy), ensinando a criar um "Fundo de Maneio" e não apenas um orçamento padrão.
+    
+- **Engenharia de Prompt Avançada:** Utilização de _Few-Shot Prompting_ e injeção de contexto estruturada para bloquear alucinações teóricas do modelo LLM.
+    
+
+## 📝 Documentação Completa
+
+Toda a documentação técnica, estratégias de prompt, edge cases e testes de stress estão detalhados e disponíveis na pasta [`docs/`](https://www.google.com/search?q=./docs/).
