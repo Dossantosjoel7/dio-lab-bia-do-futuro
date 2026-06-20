@@ -27,6 +27,8 @@ flowchart TD
     D --> C
     C --> E[Resposta Educativa e Segura]
 
+```
+
 **Stack Tecnológica:**
 
 - **Interface:** Streamlit (Python)
@@ -35,8 +37,6 @@ flowchart TD
     
 - **Base de Dados:** Ficheiros JSON e CSV locais (Pandas)
 
-
-```
 
 ## 📁 Estrutura do Projeto
 
