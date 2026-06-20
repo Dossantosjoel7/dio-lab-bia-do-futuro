@@ -86,9 +86,9 @@ flowchart TD
 
 - NÃO faz recomendações de investimento direto: Nunca sugere a compra/venda de ações, criptomoedas ou fundos específicos.
 
-- NÃO executa transferências (Apenas Leitura): Por motivos de segurança,o agente apenas lê os dados (extratos/saldos) e não tem permissão para movimentar dinheiro.
+- NÃO executa transferências (Apenas Leitura) : Por motivos de segurança,o agente apenas lê os dados (extratos/saldos) e não tem permissão para movimentar dinheiro.
 
 - NÃO pede nem armazena passwords: Está programado para recusar qualquer interação onde o cliente tente enviar códigos PIN ou CVV do cartão.
 
-- Não substitui um profissional certificado
+- Não substitui um profissional certificado.
 
